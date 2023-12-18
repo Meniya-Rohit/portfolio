@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b6f89f9247.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        nav {
+            width: 100%;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        label.left {
+            font-size: 35px;
+            color: white;
+            margin: 0 100px;
+            line-height: 80px;
+        }
+
+        nav ul {
+            float: right;
+            display: inline-block;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.1rem;
+        }
+
+        #checkbtn {
+            float: right;
+            line-height: 80px;
+            margin-right: 10px;
+            font-size: 30px;
+            color: white;
+            display: none;
+        }
+
+        #check {
+            display: none;
+        }
+
+        #check:checked~ul {
+            left: 0;
+        }
+
+        @media(max-width: 700px) {
+            label.left {
+                font-size: 26px;
+                margin: 0px 50px;
+            }
+        }
+
+        @media(max-width: 700px) {
+            label.left {
+                font-size: 26px;
+                margin: 0px 70px;
+            }
+
+            #checkbtn {
+                display: block;
+            }
+
+            nav ul {
+                width: 100%;
+                height: 80vh;
+                background: rgb(24, 15, 29);
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                transition: .5s;
+            }
+
+            nav ul li {
+                display: block;
+                text-align: left;
+                line-height: 40px;
+                margin: 15px;
+
+            }
+        }
+
+        main hr {
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 130px 0;
+        }
+
+        .firstSection>div {
+            width: 40%;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+        }
+
+        .leftSection .buttons {
+            padding: 23px;
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            background: #1e2167;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .rightSection img {
+            width: 80%;
+            margin: 50px 0;
+        }
+
+        .purple {
+            color: rgb(170, 107, 228);
+        }
+
+        .text-grey {
+            color: gray;
+        }
+
+        #element {
+            color: rgb(170, 107, 228);
+        }
+
+        .secondsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 35vw;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            text-align: center;
+        }
+
+        h3 {
+            margin: 5px;
+        }
+
+        .skill {
+            list-style: none;
+            width: 500px;
+            margin: 60px auto;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+        @media(max-width: 700px) {
+            .skill{
+                width: 400px;
+            }
+        }
+        .skill li {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .bar {
+            background: #353b48;
+            display: block;
+            height: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+       
+
+        .bar:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .bar span {
+            height: 20px;
+            float: left;
+            background: linear-gradient(135deg, rgba(236, 0, 140, 1)0%, rgba(252, 103, 103, 1)100%);
+        }
+
+        .html {
+            width: 85%;
+            animation: html 3s;
+        }
+
+        .css {
+            width: 65%;
+            animation: css 3s;
+        }
+
+        .javascript {
+            width: 45%;
+            animation: javascript 3s;
+        }
+
+        .php {
+            width: 45%;
+            animation: php 3s;
+        }
+
+        @keyframes html {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 85%;
+            }
+        }
+
+        @keyframes css {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 65%;
+            }
+        }
+
+        @keyframes javascript {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 45%;
+            }
+        }
+
+        @keyframes php {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 45%;
+            }
+        }
+
+        footer {
+            background-color: #0e0e1a;
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        footer ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.1rem;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .footer {
+                padding: 10px;
+            }
+
+            footer.footer-frist {
+                font-size: 15px;
+                margin: 0px 70px;
+                position: fixed;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check" name="" value="">
+            <label for="check" id="checkbtn"> <i class="fa fa-bars"></i></label>
+            <label class="left">Meniya Rohit</label>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact-me.html">Contact Me</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Rohit</span>
+                <div>and i am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn" onclick="window.open('resume_rohit.pdf','_blank')">Download Resume</button>
+                    <button class="btn" onclick="window.open('https://github.com/Meniya-Rohit','_blank')">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="header_img.png">
+            </div>
+        </section>
+        <hr>
+        <section class="skill">
+            <h1>My Skill</h1>
+            <li>
+                <h3>HTML</h3>
+                <span class="bar"><span class="html"></span></span>
+            </li>
+            <li>
+                <h3>CSS</h3>
+                <span class="bar"><span class="css"></span></span>
+            </li>
+            <li>
+                <h3>JAVASCRIPT</h3>
+                <span class="bar"><span class="javascript"></span></span>
+            </li>
+            <li>
+                <h3>PHP</h3>
+                <span class="bar"><span class="php"></span></span>
+            </li>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footre-frist">
+                <h3>Rohit's Developer Portfolio</h3>
+            </div>
+            <div class="footre-second">
+                <ul>Portfolio
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-me.html">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="footre-third">
+                <ul>Social Media
+                    <li><a href="https://wa.me/qr/RPHVM6MPGHVHG1" target="_blank">Whatsapp</a></li>
+                    <li><a href="https://www.facebook.com/rohit.meniya.1614?mibextid=ZbWKwL"
+                            target="_blank">Facebook</a></li>
+                    <li><a href="https://instagram.com/meniyabapu_1204_?igshid=ZGUzMzM3NWJiOQ=="
+                            target="_blank">Instagram</a></li>
+                    <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">E-mail</a></li>
+                </ul>
+            </div>
+            <div class="footre-four">
+                <ul>Skill
+                    <li>HTML</li>
+                    <li>CSSS</li>
+                    <li>JS</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">Copyright &#169 rohitportfolio.com | All rights reserved</div>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Desiner', 'photo editor', 'Web Developer'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
